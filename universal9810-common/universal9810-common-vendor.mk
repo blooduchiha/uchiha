@@ -21,8 +21,6 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_COPY_FILES += \
     vendor/samsung/universal9810-common/proprietary/vendor/bin/main_abox:$(TARGET_COPY_OUT_VENDOR)/bin/main_abox \
     vendor/samsung/universal9810-common/proprietary/vendor/etc/audio_board_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_board_info.xml \
-    vendor/samsung/universal9810-common/proprietary/vendor/etc/mixer_gains.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_gains.xml \
-    vendor/samsung/universal9810-common/proprietary/vendor/etc/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml \
     vendor/samsung/universal9810-common/proprietary/vendor/lib/libaboxpcmdump.so:$(TARGET_COPY_OUT_VENDOR)/lib/libaboxpcmdump.so \
     vendor/samsung/universal9810-common/proprietary/vendor/lib/libalsautils_sec.so:$(TARGET_COPY_OUT_VENDOR)/lib/libalsautils_sec.so \
     vendor/samsung/universal9810-common/proprietary/vendor/lib/libaudio_soundtrigger.so:$(TARGET_COPY_OUT_VENDOR)/lib/libaudio_soundtrigger.so \
@@ -30,16 +28,20 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/universal9810-common/proprietary/vendor/lib/libaudioproxy.so:$(TARGET_COPY_OUT_VENDOR)/lib/libaudioproxy.so \
     vendor/samsung/universal9810-common/proprietary/vendor/lib/librecordalive.so:$(TARGET_COPY_OUT_VENDOR)/lib/librecordalive.so \
     vendor/samsung/universal9810-common/proprietary/vendor/lib/libsecaudioinfo.so:$(TARGET_COPY_OUT_VENDOR)/lib/libsecaudioinfo.so \
+    vendor/samsung/universal9810-common/proprietary/vendor/lib/lib_SoundBooster_ver900.so:$(TARGET_COPY_OUT_VENDOR)/lib/lib_SoundBooster_ver900.so \
     vendor/samsung/universal9810-common/proprietary/vendor/lib/lib_SamsungRec_06006.so:$(TARGET_COPY_OUT_VENDOR)/lib/lib_SamsungRec_06006.so \
     vendor/samsung/universal9810-common/proprietary/vendor/lib/lib_SoundAlive_SRC384_ver320.so:$(TARGET_COPY_OUT_VENDOR)/lib/lib_SoundAlive_SRC384_ver320.so \
     vendor/samsung/universal9810-common/proprietary/vendor/lib/lib_soundaliveresampler.so:$(TARGET_COPY_OUT_VENDOR)/lib/lib_soundaliveresampler.so \
     vendor/samsung/universal9810-common/proprietary/vendor/lib/hw/audio.primary.exynos9810.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/audio.primary.exynos9810.so \
     vendor/samsung/universal9810-common/proprietary/vendor/lib/hw/sound_trigger.primary.exynos9810.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/sound_trigger.primary.exynos9810.so \
     vendor/samsung/universal9810-common/proprietary/vendor/lib/soundfx/libaudioeffectoffload.so:$(TARGET_COPY_OUT_VENDOR)/lib/soundfx/libaudioeffectoffload.so \
+    vendor/samsung/universal9810-common/proprietary/vendor/lib/soundfx/libsamsungSoundbooster_plus.so:$(TARGET_COPY_OUT_VENDOR)/lib/soundfx/libsamsungSoundbooster_plus.so \
     vendor/samsung/universal9810-common/proprietary/vendor/lib/vndk/libaudioroute.so:$(TARGET_COPY_OUT_VENDOR)/lib/vndk/libaudioroute.so \
     vendor/samsung/universal9810-common/proprietary/vendor/lib/vndk/libtinyalsa.so:$(TARGET_COPY_OUT_VENDOR)/lib/vndk/libtinyalsa.so \
+    vendor/samsung/universal9810-common/proprietary/vendor/lib64/lib_SoundBooster_ver900.so:$(TARGET_COPY_OUT_VENDOR)/lib64/lib_SoundBooster_ver900.so \
     vendor/samsung/universal9810-common/proprietary/vendor/lib64/libsecaudioinfo.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libsecaudioinfo.so \
-    vendor/samsung/universal9810-common/proprietary/vendor/lib64/soundfx/libaudioeffectoffload.so:$(TARGET_COPY_OUT_VENDOR)/lib64/soundfx/libaudioeffectoffload.so
+    vendor/samsung/universal9810-common/proprietary/vendor/lib64/soundfx/libaudioeffectoffload.so:$(TARGET_COPY_OUT_VENDOR)/lib64/soundfx/libaudioeffectoffload.so \
+    vendor/samsung/universal9810-common/proprietary/vendor/lib64/soundfx/libsamsungSoundbooster_plus.so:$(TARGET_COPY_OUT_VENDOR)/lib64/soundfx/libsamsungSoundbooster_plus.so
 
 # Bluetooth
 PRODUCT_COPY_FILES += \
@@ -64,15 +66,14 @@ PRODUCT_PACKAGES += \
     libsecaudiocoreutils \
     libswdap
 
-PRODUCT_COPY_FILES += \
-    vendor/samsung/universal9810-common/proprietary/vendor/etc/dolby/dax-default.xml:$(TARGET_COPY_OUT_VENDOR)/etc/dolby/dax-default.xml
-
 # DRM
 PRODUCT_COPY_FILES += \
-    vendor/samsung/universal9810-common/proprietary/vendor/bin/hw/android.hardware.drm@1.3-service.widevine:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.drm@1.3-service.widevine \
-    vendor/samsung/universal9810-common/proprietary/vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.drm@1.3-service.widevine.rc \
+    vendor/samsung/universal9810-common/proprietary/vendor/bin/hw/android.hardware.drm@1.4-service.widevine:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.drm@1.4-service.widevine \
+    vendor/samsung/universal9810-common/proprietary/vendor/etc/init/android.hardware.drm@1.4-service.widevine.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.drm@1.4-service.widevine.rc \
     vendor/samsung/universal9810-common/proprietary/vendor/lib/libwvhidl.so:$(TARGET_COPY_OUT_VENDOR)/lib/libwvhidl.so \
-    vendor/samsung/universal9810-common/proprietary/vendor/lib/mediadrm/libwvdrmengine.so:$(TARGET_COPY_OUT_VENDOR)/lib/mediadrm/libwvdrmengine.so
+    vendor/samsung/universal9810-common/proprietary/vendor/lib/mediadrm/libwvdrmengine.so:$(TARGET_COPY_OUT_VENDOR)/lib/mediadrm/libwvdrmengine.so \
+    vendor/samsung/universal9810-common/proprietary/vendor/lib/libdrmresource.so:$(TARGET_COPY_OUT_VENDOR)/lib/libdrmresource.so \
+    vendor/samsung/universal9810-common/proprietary/vendor/lib64/libdrmresource.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libdrmresource.so
 
 # Fingerprint
 PRODUCT_PACKAGES += \
@@ -103,6 +104,16 @@ PRODUCT_PACKAGES += \
 
 # HWC
 # Note: Taken from N770F R vendor
+PRODUCT_PACKAGES += \
+    libExynosHWCService \
+    hwcomposer.exynos9810 \
+    libexynosdisplay \
+    libexynosgraphicbuffer \
+    libexynosscaler \
+    libexynosgscaler \
+    libexynosutils \
+    libexynosv4l2
+
 PRODUCT_COPY_FILES += \
     vendor/samsung/universal9810-common/proprietary/vendor/lib64/libhwc2on1adapter.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libhwc2on1adapter.so \
     vendor/samsung/universal9810-common/proprietary/vendor/lib64/libhwc2onfbadapter.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libhwc2onfbadapter.so
@@ -122,6 +133,14 @@ PRODUCT_COPY_FILES += \
 # Note: Taken from N770F R vendor
 PRODUCT_PACKAGES += \
     libion_exynos
+
+# MALI
+# Note: Blobs taken from N770FZHU8FUL7 vendor
+PRODUCT_COPY_FILES += \
+    vendor/samsung/universal9810-common/proprietary/vendor/etc/snap_gpu_kernel_64.bin:$(TARGET_COPY_OUT_VENDOR)/etc/snap_gpu_kernel_64.bin \
+    vendor/samsung/universal9810-common/proprietary/vendor/lib/hw/libGLES_mali.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/libGLES_mali.so \
+    vendor/samsung/universal9810-common/proprietary/vendor/lib64/hw/libGLES_mali.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/libGLES_mali.so \
+    vendor/samsung/universal9810-common/proprietary/vendor/lib64/libgpudataproducer.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libgpudataproducer.so
 
 # Memtrack
 # Note: Blobs taken from N770FZHU8FUL7 vendor
@@ -194,6 +213,11 @@ PRODUCT_PACKAGES += \
 # Thermal
 PRODUCT_PACKAGES += \
     thermal.exynos9810
+
+# Vulkan
+PRODUCT_COPY_FILES += \
+    vendor/samsung/universal9810-common/proprietary/vendor/lib/hw/vulkan.mali.so:$(TARGET_COPY_OUT_VENDOR)/lib/hw/vulkan.mali.so \
+    vendor/samsung/universal9810-common/proprietary/vendor/lib64/hw/vulkan.mali.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/vulkan.mali.so
 
 # WiFi
 PRODUCT_COPY_FILES += \
